@@ -1,28 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from 'react-bootstrap/Button'
+import {Route} from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import MainPage from './pages/MainPage';
+import UploadPage from './pages/UploadPage';
+import CommentPage from './pages/CommentPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Button>test</Button>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+        <Route component = {LoginPage} path ='/login'/>
+        <Route component = {MainPage} path ={['/']} exact />
+        <Route component = {UploadPage} path = '/upload' />
+        <Route component = {CommentPage} path = '/comment' />
+        </>
+    );
+};
 
 export default App;
