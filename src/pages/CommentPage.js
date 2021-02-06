@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../components/common/Header';
+import NavHeader from '../components/common/Header';
 import UploadButtonBlock from '../components/common/UploadButton';
 
 const CommentPage = () => {
     return(
         <>
-            <Header /> 
+            <NavHeader /> 
             <div> 댓글 보기 창</div>
             <UploadButtonBlock />
         </>
