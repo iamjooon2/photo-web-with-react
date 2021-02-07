@@ -1,4 +1,4 @@
-# foto-web-with-react
+# photo-web-with-react
 
 
 왜?
