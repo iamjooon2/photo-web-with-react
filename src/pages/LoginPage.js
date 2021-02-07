@@ -1,10 +1,12 @@
 import React from 'react';
-import Header from '../components/common/Header';
+import NavHeader from '../components/common/Header';
+import Body from '../components/common/Body';
 
 const LoginPage = () => {
     return(
         <>
-            <Header />
+            <NavHeader />
+            <Body />
             <div> 로그인 페이지 </div>
         </>
     );

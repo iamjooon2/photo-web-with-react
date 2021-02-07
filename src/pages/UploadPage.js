@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from '../components/common/Header';
+import Body from '../components/common/Body';
 
-const UploadPhotoPage = () => {
+const UploadPage = () => {
     return (
     <>
         <Header />
-        <div>사진 올리기 페이지</div>
+        <Body>
+            <div>사진 올리기 페이지</div>
+        </Body>
     </>
     );
 };
 
-export default UploadPhotoPage;
+export default UploadPage;
