@@ -2,23 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 // floating action button
-const UploadButton = styled.div`
-    display : flex;
-    right : 0;
-    bottom : 0;
-    width: 88px;
-    height: 88px;
-    border-radius: 45%;
-    background-color:white;
-    box-shadow : 1px 1px 1px rgba(0, 0, 0, 0.5);
-    cursor: pointer; 
-    align-items : center;
+const UploadButton = styled.a`
+    color : #ffffff;
+    position : fixed;
+    z-index : 1;
+    bottom : 36px;
+    right : 36px;
 `;
 
 const UploadButtonBlock = () => {
     return (
         <>
-            <UploadButton />
+            <a href = "/upload" />
         </>
     );
 };

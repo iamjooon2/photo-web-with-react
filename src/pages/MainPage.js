@@ -1,8 +1,9 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import Header from '../components/common/Header';
 import UploadButtonBlock from '../components/common/UploadButton';
 import Body from '../components/common/Body';
 import Post from '../components/common/Post';
+import db from '../firebase';
 
 const MainPage = () => {
     const [posts, setPosts] = useState([
@@ -23,9 +24,9 @@ const MainPage = () => {
         }
     ]);
     
-    posts.map(post.forEach(
-        
-    ))
+   useEffect(() => {
+
+   }, []);
 
     return (
         <>
