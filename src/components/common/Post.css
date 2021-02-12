@@ -1,15 +1,14 @@
 .post {
   background-color: white;
   max-width: 500px;
-  background-color: #FFFFFF;
   border : 1px solid lightgray;
 }
 
 .post__image {
   width : 100%;
   object-fit : contain;
-  border-top : 1px solid lightgray;
-  border-bottom : 1px solid lightgray;
+  border-top : 0.5px solid lightgray;
+  border-bottom : 0.5px solid lightgray;
 }
 
 .post__text {
@@ -18,7 +17,5 @@
 }
 
 .post__username {
-  display : flex;
-  align-items : center;
-  padding : 20px; 
-}
+   
+} 

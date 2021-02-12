@@ -1,17 +1,10 @@
-import React from 'react';
+import react from 'react';
 
-const Body = () => { 
-  return (
+const Body = () => {
+  return(
     <>
-      <span>
-        a
-      </span>
-      <span>
-        b
-      </span>
-      <span>
-        c
-      </span>
+      <div className = "body"> d
+      </div>
     </>
   )
 }

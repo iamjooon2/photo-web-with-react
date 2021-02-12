@@ -1,0 +1,20 @@
+.Button {
+  background-color : rgb(175,199,183);
+  background-image : url("../camera.png");
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border : black;
+  position : fixed;
+  height : 80px;
+  width : 80px;
+  border-radius : 50%;
+  z-index : 2;
+  bottom : 36px;
+  right : 36px;
+  cursor: pointer;
+}
+
+.Button:hover {
+  box-shadow : 1px 1px 6px rgba(0,0,0,0.75);
+}
