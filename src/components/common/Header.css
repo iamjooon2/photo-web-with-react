@@ -1,0 +1,30 @@
+.justify-content-first.navbar-collapse.collapse{
+  background-color: white;
+}
+
+.justify-content-first.navbar-collapse.collapse .blankbox {
+  color:white;
+  background-color : white;
+}
+.justify-content-center.navbar-collapse.collapse{
+  background-color: white;
+}
+
+.justify-content-end.navbar-collapse.collapse{
+  background-color: white;
+}
+
+.navbar-text {
+  background-color: white;
+}
+
+.justify-content-center.navbar-collapse.collapse{
+  background-color: white;
+  padding-right : 0;
+  margin-right: 0;
+}
+
+.navbar-brand {
+  padding-right : 0;
+  margin-right: 0;
+}

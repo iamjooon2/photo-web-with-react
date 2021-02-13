@@ -1,12 +1,13 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import './UploadButton.css';
-
 
 const UploadButton = () => {
     return (
         <>
-            <a href = '/upload'
-               className = 'Button' />
+            <NavLink to ={'/upload'}> 
+                <div className ='Button' />
+            </NavLink>
         </>
     );
 };

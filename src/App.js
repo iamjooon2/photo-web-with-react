@@ -1,11 +1,9 @@
-import React from 'react';
 import {Route} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 import UploadPage from './pages/UploadPage';
 import CommentPage from './pages/CommentPage';
 import './App.css';
-
 
 const App = () => {
     return (

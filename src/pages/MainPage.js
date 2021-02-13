@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/common/Header';
 import UploadButton from '../components/common/UploadButton';
 import Post from '../components/common/Post';
-import Body from '../components/common/Body';
 
 // import {db} from '../firebase';
 
@@ -37,6 +36,9 @@ const MainPage = () => {
             <br />
             <br />
             <br />
+            <br />
+            <Post/>
+            <Post/>
             <Post/>
             <Post/>
             <UploadButton />
