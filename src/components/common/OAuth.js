@@ -4,11 +4,13 @@ import './OAuth.css';
 const OAuth = () => { 
   return (
     <>
+    <div className ='Container'>
       <div className = 'authBox'> 
-        This is Authentication box!
+        Sign in with Google
       </div>
+    </div>
     </>
-  )
-}
+  );
+};
 
 export default OAuth;

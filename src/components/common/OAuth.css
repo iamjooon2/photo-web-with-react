@@ -1,5 +1,9 @@
-.authbox {
-  margin-right : 30px;
-  margin-left : 30px;
+.Container {
   display : flex;
+  justify-content: center;
+  background-color : white;
+}
+
+.container .authbox {
+  background-color : white;
 }

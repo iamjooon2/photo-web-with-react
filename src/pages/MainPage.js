@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../components/common/Header';
-import UploadButton from '../components/common/UploadButton';
+import BrBlock from '../components/common/BrBlock';
 import Post from '../components/common/Post';
+import UploadButton from '../components/common/UploadButton';
 
 // import {db} from '../firebase';
 
@@ -33,14 +34,9 @@ const MainPage = () => {
     return (
         <>
             <Header />
-            <br />
-            <br />
-            <br />
-            <br />
+            <BrBlock />
             <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            
             <UploadButton />
         </>
     );

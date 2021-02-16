@@ -7,12 +7,12 @@ import './App.css';
 
 const App = () => {
     return (
-        <>  
+        <>
             <Route component = {LoginPage} path ='/login'/>
             <Route component = {MainPage} path ={['/', '/main']} exact />
             <Route component = {UploadPage} path = '/upload' />
             <Route component = {CommentPage} path = '/comment' />    
-         </>
+        </>
     );
 };
  

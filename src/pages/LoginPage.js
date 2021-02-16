@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../components/common/Header';
+import BrBlock from '../components/common/BrBlock';
+import OAuth from '../components/common/OAuth';
 
 const LoginPage = () => {
     return(
         <>
             <Header /> 
-            <br />
-            <br />
-            <br />
-            <div> 로그인 페이지 </div> 
+            <BrBlock />
+            <OAuth /> 
         </>
     );
 };

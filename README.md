@@ -69,3 +69,17 @@
     * 사진 게시자와 사용자가 같을 시 
         * 3번 사진 업로드 창 이동
         * 사진 삭제 가능
+
+시안
+----------
+1. 메인 페이지<br/>
+![ex_MainPage](./img/01_MainPage.jpg) <br />
+
+2. 로그인 창 <br />
+![ex_LoginPage](./img/02_LoginPage.jpg) <br />
+
+3. 사진 업로드 창<br />
+![ex_UploadPage](./img/03_UploadPage.jpg) <br />
+
+4. 사진 조회창 <br />
+![ex_CommentPage](./img/04_CommentPage.jpg) <br />
