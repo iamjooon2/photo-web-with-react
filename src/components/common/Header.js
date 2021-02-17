@@ -20,7 +20,10 @@ const Header = () => {
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text bg ='white'>
-              <a href="/login">login</a>
+              <a href="/login">
+                login
+                {/* {loginInFo} */}
+                </a>
             </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

@@ -1,0 +1,73 @@
+.UploadPhoto_container {
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoupload_box {
+  background-color: white;
+  width : 400px;
+  text-align: center;
+  align-items: center;
+}
+
+.custom.custom-file {
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-file {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-file-label {
+  background-color: white;
+}
+
+.form-control{
+  justify-content: center;
+  align-items: center;
+  width:400px;
+}
+
+#exampleFormControlFile1 {
+  background-color: white;
+  justify-content: center;
+  width: 400px;
+}
+
+form {
+  background-color :white;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  background-color: white;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-label {
+  background-color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.caption {
+  background-color: white;
+  justify-content: center; 
+  align-items: center;
+}
+
+.uploadButton {
+  background-color: white;
+  text-align: center;
+  align-items: bottom;
+}

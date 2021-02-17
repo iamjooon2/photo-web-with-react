@@ -4,9 +4,9 @@ import './OAuth.css';
 const OAuth = () => { 
   return (
     <>
-    <div className ='Container'>
+    <div className ='login_container'>
       <div className = 'authBox'> 
-        Sign in with Google
+        Im Oauth-box
       </div>
     </div>
     </>

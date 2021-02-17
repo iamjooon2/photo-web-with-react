@@ -1,9 +1,18 @@
-.Container {
-  display : flex;
+.login_container {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background-color : white;
+  background-color: white;
+  width : 400px;
+  height : 250px;
+  margin : 100px auto;
 }
 
-.container .authbox {
-  background-color : white;
+.login_container .authBox {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  height : 30px;
+  width : 180px;
+  background-color: white;
 }

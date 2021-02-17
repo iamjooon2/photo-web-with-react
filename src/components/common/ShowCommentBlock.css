@@ -1,0 +1,28 @@
+.show_comment_container {
+  display : flex;
+  justify-content: center;
+}
+
+.comments {
+  display : flex;
+  background-color: white;
+  align-items: center;
+  width: 460px;
+  height: 50px;
+  border-top : 0.5px solid lightgray;
+  border-bottom : 0.5px solid lightgray;
+  border-right : 0.5px solid lightgray;
+  border-left : 0.5px solid lightgray;
+}
+
+.user {
+  background-color: white;
+  margin-left :5px;
+}
+
+.comment {
+  font-size: 19px;
+  font-style: oblique;
+  background-color: white;
+  margin-left : 10px;
+}

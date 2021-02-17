@@ -36,7 +36,6 @@ const MainPage = () => {
             <Header />
             <BrBlock />
             <Post/>
-            
             <UploadButton />
         </>
     );
