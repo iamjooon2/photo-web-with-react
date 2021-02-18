@@ -19,3 +19,13 @@
   font-weight: normal;
   background-color:white;
 }
+
+.post__username {
+  background-color: white;
+  margin-left : 6px;
+}
+
+.post__caption {
+  background-color: white;
+  margin-left : 6px;
+}

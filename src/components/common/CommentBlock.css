@@ -1,4 +1,4 @@
-.show_comment_container {
+.comment_container {
   display : flex;
   justify-content: center;
 }

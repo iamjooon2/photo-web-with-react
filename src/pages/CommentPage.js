@@ -3,7 +3,8 @@ import Header from '../components/common/Header';
 import BrBlock from '../components/common/BrBlock';
 import UploadButtonBlock from '../components/common/UploadButton';
 import Post from '../components/common/Post';
-import ShowCommentBlock from '../components/common/ShowCommentBlock';
+import CommentBlock from '../components/common/CommentBlock';
+import UploadComment from '../components/common/UploadComment';
 
 const CommentPage = () => {
     return(
@@ -11,8 +12,8 @@ const CommentPage = () => {
             <Header /> 
             <BrBlock />
             <Post />
-            <ShowCommentBlock />
-            <ShowCommentBlock />
+            <UploadComment />
+            <CommentBlock />
             <UploadButtonBlock />
         </>
     );
