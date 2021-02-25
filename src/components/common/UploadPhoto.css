@@ -10,6 +10,9 @@
   width : 400px;
   text-align: center;
   align-items: center;
+  border : 1px solid lightgray;
+  border : 1px solid lightgray;
+
 }
 
 .custom.custom-file {
@@ -38,7 +41,7 @@
 #exampleFormControlFile1 {
   background-color: white;
   justify-content: center;
-  width: 400px;
+  width: 380px;
 }
 
 form {

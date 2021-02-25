@@ -19,6 +19,7 @@ const UploadComment = () => {
           </InputGroup.Append>
         </InputGroup>
       </div>
+      <br />
     </>
   );
 };

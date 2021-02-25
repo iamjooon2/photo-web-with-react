@@ -4,7 +4,6 @@ import { Form, Button } from 'react-bootstrap';
 import './UploadPhoto.css';
 import BrBlock from './BrBlock';
 
-
 const UploadPhotoBlock = () => {
   return (
     <>

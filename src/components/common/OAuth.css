@@ -6,6 +6,8 @@
   width : 400px;
   height : 250px;
   margin : 100px auto;
+  border : 1px solid lightgray;
+
 }
 
 .login_container .authBox {
@@ -15,4 +17,4 @@
   height : 30px;
   width : 180px;
   background-color: white;
-}
+ }

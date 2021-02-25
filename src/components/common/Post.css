@@ -1,12 +1,14 @@
 .container {
   display : flex;
-  justify-content: center;
+  align-items : center;
+  flex-direction: column;
 }
 
 #root .post {
   max-width: 500px;
   border : 1px solid lightgray;
   background-color: white;
+  margin-bottom : 45px;
 }
 
 .post__image {

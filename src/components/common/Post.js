@@ -1,28 +1,48 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Post.css';
 import {NavLink} from "react-router-dom";
+import firebase, { dbService } from '../../fbase';
 
-const Post = ({username, caption, imageUrl}) => {
+const Post = () => {
+
+  const [posts, setPosts] = useState([]);
+
+  const getPosts = async() => {
+    const dbPosts = await dbService.collection("posts").get();
+    dbPosts.forEach((document) => {
+        const postObject = {
+        ...document.data(),
+        id : document.id,
+      };
+      setPosts((prev)=> [postObject, ...prev]);
+    });  
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
     <>
       <div className = 'container'>
       <br />
+      {posts.map((posts) => 
         <div className = "post">
-          <div className = "post__username">
-            jamm {username}
-          </div>
-            <NavLink to ={'/comment'} >
-              <img className ="post__image" 
-                  src = "https://avatars.githubusercontent.com/u/77920690?s=460&u=b5ef9f384e47c25a4bd10902f1b65b089608f84e&v=4"
-                  // {imageUrl} 
-                  />  
-            </NavLink>         
-          <div className = "post__caption">
-            caption {caption}
-          </div>
+        <div 
+              className = "post__username">
+                {posts.username}
+              </div>
+                <NavLink to ={'/comment'} >
+                  <img className ="post__image" 
+                      src = {posts.imageUrl}
+                      />  
+                </NavLink>         
+              <div className = "post__caption">
+                {posts.caption}
+              </div>
         </div>
-        </div>
-      <br />
+      )}
+      </div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Navbar} from 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css';
 
 const Header = () => {
@@ -19,10 +20,7 @@ const Header = () => {
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text bg ='white'>
-              <a href="/login">
-                login
-                {/* {loginInFo} */}
-                </a>
+              <a href="/login">login</a>
             </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

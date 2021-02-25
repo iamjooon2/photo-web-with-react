@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import './UploadButton.css';
+import './UploadPageButton.css';
 
-const UploadButton = () => {
+const UploadPageButton = () => {
     return (
         <>
             <NavLink to ={'/upload'}> 
@@ -12,4 +12,4 @@ const UploadButton = () => {
     );
 };
 
-export default UploadButton;
+export default UploadPageButton;
