@@ -7,16 +7,14 @@
 
 .photoupload_box {
   background-color: white;
-  width : 400px;
+  width : 350px;
   text-align: center;
   align-items: center;
   border : 1px solid lightgray;
-  border : 1px solid lightgray;
-
 }
 
 .custom.custom-file {
-  width: 300px;
+  width: 350px;
   justify-content: center;
   align-items: center;
 }
@@ -35,13 +33,13 @@
 .form-control{
   justify-content: center;
   align-items: center;
-  width:400px;
+  width:349px;
 }
 
 #exampleFormControlFile1 {
   background-color: white;
   justify-content: center;
-  width: 380px;
+  width: 348px;
 }
 
 form {
@@ -73,4 +71,8 @@ form {
   background-color: white;
   text-align: center;
   align-items: bottom;
+}
+
+.btn.btn-light {
+  border : 1px lightgray;
 }
