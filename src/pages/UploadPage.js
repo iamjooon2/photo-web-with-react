@@ -7,8 +7,7 @@ const UploadPage = () => {
     return (
             <>
                 <Header />
-                <BrBlock />
-                
+                <BrBlock />                
                 <UploadPhoto />
             </>    
     );
