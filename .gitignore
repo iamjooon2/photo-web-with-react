@@ -27,3 +27,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#temporary testing file
+./src/components/common/JustPhotoUpload.js

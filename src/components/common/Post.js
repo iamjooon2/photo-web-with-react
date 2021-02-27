@@ -3,42 +3,37 @@ import './Post.css';
 import {NavLink} from "react-router-dom";
 import firebase, { dbService } from '../../fbase';
 
-const Post = () => {
+const Post = ({isOwner, }) => {
 
   const [posts, setPosts] = useState([]);
 
-  const getPosts = async() => {
-    const dbPosts = await dbService.collection("posts").get();
-    dbPosts.forEach((document) => {
-        const postObject = {
-        ...document.data(),
-        id : document.id,
-      };
-      setPosts((prev)=> [postObject, ...prev]);
-    });  
-  };
-
   useEffect(() => {
-    getPosts();
+      dbService.collection('posts').onSnapshot((snapshot)=> {
+      const postArray = snapshot.docs.map(doc => ({
+        id :doc.id,
+        ...doc.data(),
+      }));
+      setPosts(postArray);
+    })
   }, []);
 
   return (
     <>
       <div className = 'container'>
       <br />
-      {posts.map((posts) => 
+      {posts.map((post) => 
         <div className = "post">
         <div 
               className = "post__username">
-                {posts.username}
+                {post.username}
               </div>
                 <NavLink to ={'/comment'} >
                   <img className ="post__image" 
-                      src = {posts.imageUrl}
+                      src = {post.attachmentUrl}
                       />  
                 </NavLink>         
               <div className = "post__caption">
-                {posts.caption}
+                {post.caption}
               </div>
         </div>
       )}
