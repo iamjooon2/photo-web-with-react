@@ -7,8 +7,8 @@ import BrBlock from './BrBlock';
 import { dbService, storageService } from '../../fbase';
 
 const UploadPhotoBlock = ({userObj}) => {
-  const [caption, setCaption] = useState('');
-
+  const [caption, setCaption] = useState(''); 
+  const [attachment, setAttachment]  = useState(); 
   // useEffect(() => {
   //   dbService.collection('posts').onSnapshot((snapshot) => {
   //     const postArray = snapshot.docs.map((doc) => ({
@@ -21,20 +21,40 @@ const UploadPhotoBlock = ({userObj}) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    await dbService.collection("posts").add({
-      // attachmentUrl ,
-      caption,
-      
-    });
-    setCaption('');
+    const fileRef = storageService.ref().child(`${uuidv4()}`);
+    const response = await fileRef.putString(attachment, "data_url");
+    const attachmentUrl = await response.ref.getDownloadURL();
+    const postObj = {
+      caption : caption,
+      attachmentUrl
+    }
+    await dbService.collection("posts").add(postObj);
+    setCaption(''); 
   };
 
   const onChange = (event) => {
     const { 
       target : {value},
     } = event;
+    // event안에서 target 속으로 가 파일을 받아온다
     setCaption(value);
   };
+  
+  const onFileChange = (event) => {
+    const { 
+      target: { files}
+    } = event;
+    const theFile = files[0];
+    const reader = new FileReader();
+    reader.onloadend = (finishedEvent) => {
+      const {
+        currentTarget : {result},
+      } = finishedEvent;
+      setAttachment(result);
+    };
+    reader.readAsDataURL(theFile);
+  }
+
   return (
     <>
       <BrBlock />
@@ -44,9 +64,11 @@ const UploadPhotoBlock = ({userObj}) => {
           <br />
           <br />
           <div className = 'photoupload'>  
-            <Form.File id="exampleFormControlFile1" 
+            <Form.File  type = 'file'
+                        id="exampleFormControlFile1" 
                         label="Upload your photo and share with others!" 
-                        accept ='image/*' />
+                        accept ='image/*' 
+                        onChange = {onFileChange}/>
           </div>
           <br />
           <div className = 'caption'>
@@ -54,7 +76,7 @@ const UploadPhotoBlock = ({userObj}) => {
           </div>
           <br />
             <div className = 'uploadButton' >
-              <Button variant="secondary" type = 'submit' >upload</Button>
+              <Button variant="secondary" type = 'submit'>upload</Button>
             </div>
             <br />
           </div>
