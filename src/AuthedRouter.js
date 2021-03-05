@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Route, Router, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 import UploadPage from './pages/UploadPage';
@@ -18,27 +18,27 @@ const App = () => {
         if (user){
             setIsLoggedIn(true);
             } else {
-            setIsLoggedIn(false);
+                setIsLoggedIn(false);
             }
             setInit(true);
         }); //init이 false면(==로그온 상태가 아니면) router를 숨기자
     }, []);
 
-    return (
-        <Router>
-          <Switch>
-            {isLoggedIn ? ( 
-            <>
-              <Route component = {MainPage} path ={['/', '/main']} exact />
-              <Route component = {UploadPage} path ='/upload' />
-              <Route component = {CommentPage} path = "/@:postId:AttachmentUrl" />
-              <Route component= {NotFoundPage} path = '404' />
-            </> ) : (
-              <Route component = {LoginPage} exact path = {['/', '/main']} />
-            )}
-            </Switch>
-        </Router>
-      );
-    };
- 
+  return (
+    <Router>
+      <Switch>
+        {isLoggedIn ? ( 
+        <>
+          <Route component = {MainPage} path ={['/', '/main']} exact />
+          <Route component = {UploadPage} path ='/upload' />
+          <Route component = {CommentPage} path = "/@:postId:AttachmentUrl" />
+          <Route component= {NotFoundPage} path = '404' />
+        </> ) : (
+          <Route component = {LoginPage} exact path = {['/', '/main']} />
+        )}
+        </Switch>
+    </Router>
+  );
+};
+
 export default App;
