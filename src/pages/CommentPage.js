@@ -6,8 +6,7 @@ import UploadComment from '../components/common/UploadComment';
 import UploadPageButton from '../components/common/UploadPageButton';
 import CommentBlock from '../components/common/CommentBlock';
 
-
-const CommentPage = () => {
+const CommentPage = ({userObj, isLoggedIn}) => {
     return(
         <>
             <Header /> 

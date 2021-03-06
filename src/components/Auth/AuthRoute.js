@@ -22,4 +22,4 @@ function AuthRoute({ authenticated, component: Component, render, ...rest }) {
   )
 }
 
-export default AuthRoute
+export default AuthRoute;

@@ -6,12 +6,12 @@ import UploadPageButton from '../components/common/UploadPageButton';
 
 // import {db} from '../firebase';
 
-const MainPage = () => {
+const MainPage = ({userObj}) => {
     return (
         <>
             <Header />
             <BrBlock />
-            <Post/>
+            <Post userObj = {userObj} />
             <UploadPageButton />
         </>
     );

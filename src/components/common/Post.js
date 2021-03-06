@@ -3,10 +3,8 @@ import './Post.css';
 import {NavLink} from "react-router-dom";
 import firebase, { dbService } from '../../fbase';
 
-const Post = ({isOwner, }) => {
-
+const Post = () => {
   const [posts, setPosts] = useState([]);
-
   useEffect(() => {
       dbService.collection('posts').onSnapshot((snapshot)=> {
       const postArray = snapshot.docs.map(doc => ({

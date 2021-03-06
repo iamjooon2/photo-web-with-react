@@ -4,20 +4,25 @@ import { Form, Button } from 'react-bootstrap';
 import './UploadPhoto.css';
 import { v4 as uuidv4 } from "uuid";
 import BrBlock from './BrBlock';
-import { dbService, storageService } from '../../fbase';
+import { dbService, storageService, authService} from '../../fbase';
 
-const UploadPhotoBlock = ({userObj}) => {
+const UploadPhotoBlock = () => {
   const [caption, setCaption] = useState(''); 
   const [attachment, setAttachment]  = useState(); 
-  // useEffect(() => {
-  //   dbService.collection('posts').onSnapshot((snapshot) => {
-  //     const postArray = snapshot.docs.map((doc) => ({
-  //       id : doc.id,
-  //       ...doc.data(),
-  //     }));
-  //     setPosts(postArray);
-  //   });
-  // }, []);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userObj, setUserObj] = useState(null);
+  
+  useEffect(()=> {
+    authService.onAuthStateChanged((user)=> {     // onAuthService에서 실제로 로그인 되어있는지 확인 가능
+      if (user){
+          setIsLoggedIn(true);
+          setUserObj(user);
+          } else {
+           setIsLoggedIn(false); 
+          }
+      }); //setInit이 false면 router 자체를 숨길 수도 있음
+  }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +30,7 @@ const UploadPhotoBlock = ({userObj}) => {
     const response = await fileRef.putString(attachment, "data_url");
     const attachmentUrl = await response.ref.getDownloadURL();
     const postObj = {
+      username : userObj.uid,
       caption : caption,
       attachmentUrl
     }

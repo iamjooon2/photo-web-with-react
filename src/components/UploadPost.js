@@ -2,10 +2,25 @@ import React from 'react';
 import './UploadPost.css';
 
 const UploadPost = ({username}) => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userObj, setUserObj] = useState(null);
+  
+  useEffect(()=> {
+    authService.onAuthStateChanged((user)=> {     // onAuthService에서 실제로 로그인 되어있는지 확인 가능
+      if (user){
+          setIsLoggedIn(true);
+          setUserObj(user);
+          } else {
+           setIsLoggedIn(false); 
+          }
+      }); //setInit이 false면 router 자체를 숨길 수도 있음
+  }, []);
+
   const {image, setImage} = useState(null);
   const {progress, setProgress} = useState('');
   const {caption, setCaption} = useState('');
-
+  
   const handleChange = (e) => {
     if (e.target.files[0]){
       setImage(e.target.files[0]);
@@ -24,9 +39,10 @@ const UploadPost = ({username}) => {
         setProgress(progress);
       },
       (error) => {
-
       }
     )
+    
+
   }
   return (
     <div className = "UploadPost">

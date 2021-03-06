@@ -6,10 +6,8 @@ import './OAuth.css';
 const OAuth = () => {
 
   const onGoogleClick = async (event) => {
-    
     let provider = new firebaseInstance.auth.GoogleAuthProvider();
     const data = await authService.signInWithPopup(provider);
-
   } 
 
   const history = useHistory();
@@ -22,7 +20,7 @@ const OAuth = () => {
   return (
     <>
     <div className ='login_container'>
-      <div onClick={onGoogleClick} className="authBox">
+      <div onClick={onGoogleClick} className="authBox" >
           Continue with Google 
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Route, Router, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 import UploadPage from './pages/UploadPage';
@@ -10,35 +10,33 @@ import './App.css';
 
 const App = () => {
 
-    const [init, setInit] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+    
     useEffect(()=> {
-        authService.onAuthStateChanged((user)=> {     // onAuthService에서 실제로 로그인 되어있는지 확인 가능
+      authService.onAuthStateChanged((user)=> {     // onAuthService에서 실제로 로그인 되어있는지 확인 가능
         if (user){
             setIsLoggedIn(true);
             } else {
-            setIsLoggedIn(false);
+             setIsLoggedIn(false); 
             }
-            setInit(true);
-        }); //init이 false면(==로그온 상태가 아니면) router를 숨기자
+        }); //setInit이 false면 router 자체를 숨길 수도 있음
     }, []);
 
-    return (
-        <Router>
-          <Switch>
-            {isLoggedIn ? ( 
-            <>
-              <Route component = {MainPage} path ={['/', '/main']} exact />
-              <Route component = {UploadPage} path ='/upload' />
-              <Route component = {CommentPage} path = "/@:postId:AttachmentUrl" />
-              <Route component= {NotFoundPage} path = '404' />
-            </> ) : (
-              <Route component = {LoginPage} exact path = {['/', '/main']} />
-            )}
-            </Switch>
-        </Router>
-      );
-    };
- 
+  return (
+    <>
+    {isLoggedIn ? ( 
+      <>
+        <Route component = {MainPage} path ={['/', '/main']} exact />
+        <Route component = {UploadPage} path ='/upload' />
+        <Route component = {CommentPage} path = "/@:postId:AttachmentUrl"  />
+        <Route component= {NotFoundPage} path = '404'  />
+        <Route component = {MainPage} path = '/login' />
+      </> ) : (
+        <Route component = {LoginPage} exact path = {['/', '/main', '/upload', '/login']} />
+      )}
+    </>
+    
+  );
+};
+
 export default App;
