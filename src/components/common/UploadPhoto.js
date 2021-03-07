@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Route, useHistory} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button } from 'react-bootstrap';
 import './UploadPhoto.css';
@@ -6,7 +7,11 @@ import { v4 as uuidv4 } from "uuid";
 import BrBlock from './BrBlock';
 import { dbService, storageService, authService} from '../../fbase';
 
+
 const UploadPhotoBlock = () => {
+
+  const history = useHistory();
+  
   const [caption, setCaption] = useState(''); 
   const [attachment, setAttachment]  = useState(); 
 
@@ -14,14 +19,14 @@ const UploadPhotoBlock = () => {
   const [userObj, setUserObj] = useState(null);
   
   useEffect(()=> {
-    authService.onAuthStateChanged((user)=> {     // onAuthService에서 실제로 로그인 되어있는지 확인 가능
+    authService.onAuthStateChanged((user)=> { // onAuthService에서 실제로 로그인 되어있는지 확인 가능
       if (user){
           setIsLoggedIn(true);
           setUserObj(user);
           } else {
            setIsLoggedIn(false); 
           }
-      }); //setInit이 false면 router 자체를 숨길 수도 있음
+      }); 
   }, []);
 
   const onSubmit = async (event) => {
@@ -30,12 +35,14 @@ const UploadPhotoBlock = () => {
     const response = await fileRef.putString(attachment, "data_url");
     const attachmentUrl = await response.ref.getDownloadURL();
     const postObj = {
-      username : userObj.uid,
+      idx : Date.now(),
+      username : userObj.displayName,
       caption : caption,
       attachmentUrl
     }
     await dbService.collection("posts").add(postObj);
     setCaption(''); 
+    history.push("/");
   };
 
   const onChange = (event) => {
@@ -48,7 +55,7 @@ const UploadPhotoBlock = () => {
   
   const onFileChange = (event) => {
     const { 
-      target: { files}
+      target: {files}
     } = event;
     const theFile = files[0];
     const reader = new FileReader();
@@ -78,11 +85,11 @@ const UploadPhotoBlock = () => {
           </div>
           <br />
           <div className = 'caption'>
-              <Form.Control as="textarea" rows={1} value = {caption} onChange = {onChange} />
+              <Form.Control as="textarea" rows={1} value = {caption} onChange = {onChange}  />
           </div>
           <br />
             <div className = 'uploadButton' >
-              <Button variant="secondary" type = 'submit'>upload</Button>
+              <Button variant="secondary" type = 'submit' >upload</Button>
             </div>
             <br />
           </div>
@@ -91,5 +98,4 @@ const UploadPhotoBlock = () => {
     </>
   )
 }
-
 export default UploadPhotoBlock;

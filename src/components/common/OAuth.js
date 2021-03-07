@@ -20,8 +20,12 @@ const OAuth = () => {
   return (
     <>
     <div className ='login_container'>
-      <div onClick={onGoogleClick} className="authBox" >
+      <div onClick={onGoogleClick} className="loginButton" >
           Continue with Google 
+      </div>
+      <br />
+      <div onClick = {onLogOutClick} className='logoutButton'>
+          Logout
       </div>
     </div>
     </>

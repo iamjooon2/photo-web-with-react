@@ -25,7 +25,7 @@ const Post = () => {
               className = "post__username">
                 {post.username}
               </div>
-                <NavLink to ={'/comment'} >
+                <NavLink to ={'/@${post.attachmentUrl}/'} >
                   <img className ="post__image" 
                       src = {post.attachmentUrl}
                       />  
